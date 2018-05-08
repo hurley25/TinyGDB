@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
     };
 
     int opt;
-    while ((opt = getopt_long(argc, argv, optstring, longopts, NULL)) > 0) {
+    while ((opt = getopt_long(argc, argv, optstring, longopts, NULL)) != -1) {
         switch (opt) {
         case 'v':
             print_version_info();
@@ -72,8 +72,10 @@ int main(int argc, char *argv[])
 
     char *line = NULL;
     while ((line = linenoise("TinyGDB> ")) != NULL) {
+        if (parse_command_line(line) != -1) {
+            linenoiseHistoryAdd(line);
+        }
         // Add command to the history
-        linenoiseHistoryAdd(line);
         free(line);
     }
 
