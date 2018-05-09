@@ -12,8 +12,8 @@ void completion(const char *buf, linenoiseCompletions *lc)
     int matchlen = strlen(buf);
     size_t len = sizeof(tinygdb_commands) / sizeof(*tinygdb_commands);
     for (size_t i = 0; i < len; ++i) {
-        if (!strncmp(buf, tinygdb_commands[i].cmd, matchlen)) {
-            linenoiseAddCompletion(lc, tinygdb_commands[i].cmd);
+        if (!strncmp(buf, tinygdb_commands[i].name, matchlen)) {
+            linenoiseAddCompletion(lc, tinygdb_commands[i].name);
         }
     }
 }
@@ -24,7 +24,7 @@ const char *hints(const char *buf, int *color, int *bold)
     *bold = 0;
     size_t len = sizeof(tinygdb_commands) / sizeof(*tinygdb_commands);
     for (size_t i = 0; i < len; ++i) {
-        if (!strcmp(buf, tinygdb_commands[i].cmd)) {
+        if (!strcmp(buf, tinygdb_commands[i].name)) {
             return tinygdb_commands[i].synopsis;
         }
     }

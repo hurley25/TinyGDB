@@ -7,7 +7,7 @@ C_OBJECTS = $(patsubst %.c, %.o, $(C_SOURCES))
 
 CC = gcc
 
-C_FLAGS = -c -Wall -Wextra -std=c99 -g -I.
+C_FLAGS = -c -Wall -Wextra -Wno-unused-parameter -std=c99 -g -I.
 
 all: $(C_OBJECTS) 
 	@echo link ...
