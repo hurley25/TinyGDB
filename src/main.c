@@ -72,9 +72,8 @@ int main(int argc, char *argv[])
 
     char *line = NULL;
     while ((line = linenoise("TinyGDB> ")) != NULL) {
-        if (parse_command_line(line) != -1) {
-            linenoiseHistoryAdd(line);
-        }
+        linenoiseHistoryAdd(line);
+        parse_command_line(line);
         // Add command to the history
         free(line);
     }

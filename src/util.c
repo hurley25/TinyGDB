@@ -1,6 +1,6 @@
-#include <string.h>
-
 #include "util.h"
+
+#include <string.h>
 
 int string_split(char *str, char *delim, char **result, int length)
 {
