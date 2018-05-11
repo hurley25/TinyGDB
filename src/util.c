@@ -1,5 +1,7 @@
 #include "util.h"
 
+#include <stdio.h>
+#define __USE_BSD 1
 #include <string.h>
 
 int string_split(char *str, char *delim, char **result, int length)
@@ -11,7 +13,7 @@ int string_split(char *str, char *delim, char **result, int length)
         if (p && *p != '\0') {
             result[i++] = p;
         }
-    } while(p && i < length);
+    } while (p && i < length);
 
     return i;
 }

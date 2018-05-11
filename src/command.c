@@ -112,7 +112,7 @@ int do_cmd_run(int argc, char **argv)
     if (argc >= 2) {
     }
 
-    debugger_status.is_running = 1;
+    debugger_status.is_running = TRUE;
 
     return 0;
 }
@@ -169,7 +169,7 @@ int do_cmd_kill(int argc, char **argv)
         fprintf(stderr, "Debugger not running\n");
         return -1;
     }
-    debugger_status.is_running = 0;
+    debugger_status.is_running = FALSE;
 
     return 0;
 }

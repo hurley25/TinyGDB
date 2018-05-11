@@ -11,7 +11,7 @@ C_FLAGS = -c -Wall -Wextra -Wno-unused-parameter -std=c99 -g -I.
 
 all: $(C_OBJECTS) 
 	@echo link ...
-	$(CC) $(C_OBJECTS) -lm -o $(PROGRAM)
+	$(CC) $(C_OBJECTS) -lbfd -liberty -ldl -lz -o $(PROGRAM)
 
 .c.o:
 	@echo compiler $< ...

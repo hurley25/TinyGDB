@@ -108,6 +108,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <errno.h>
+#define __USE_BSD 1
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
